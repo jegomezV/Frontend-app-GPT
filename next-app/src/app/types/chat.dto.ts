@@ -1,7 +1,7 @@
 import {MDXRemoteSerializeResult} from "next-mdx-remote";
 
 export interface ChatTypes {
-  _id: string;
+  id: string;
   user: string;
   title: string;
   messages: {

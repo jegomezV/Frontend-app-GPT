@@ -38,19 +38,19 @@ export default function SignUpForm() {
   return (
     <form
       onSubmit={handleSignUp}
-      className='flex w-full flex-col items-center justify-around gap-4 rounded-xl px-10 py-16 transition-all ease-in-out'>
+      className='flex border-[1px] drop-shadow-[0_1.5px_10px_rgba(255,255,255,0.1)] shadow-[0_5px_40px_-15px_rgba(255,255,255,0.3)] flex-col items-center justify-around gap-4 rounded-xl px-10 py-16 transition-all ease-in-out'>
       <h3 className='text-2xl font-light text-white'>Summarizer</h3>
       {(!alert || alert?.error) && (
         <>
-          <label htmlFor="name" className='flex flex-col'>Name
+          <label htmlFor="name" className='flex flex-col w-[70%]'>Name
             <input type='text' name='name' required className='rounded px-2 py-1 text-black' value={name}
                    onChange={e => setName(e.target.value)}/>
           </label>
-          <label htmlFor="email" className='flex flex-col'>Email
+          <label htmlFor="email" className='flex flex-col w-[70%]'>Email
             <input type='email' name='email' required className='rounded px-2 py-1 text-black' value={email}
                    onChange={e => setEmail(e.target.value)}/>
           </label>
-          <label htmlFor="password" className='flex flex-col'>Password
+          <label htmlFor="password" className='flex flex-col w-[70%]'>Password
             <input type='password' name='password' required className='rounded px-2 py-1 text-black' value={password}
                    onChange={e => setPassword(e.target.value)}/>
           </label>

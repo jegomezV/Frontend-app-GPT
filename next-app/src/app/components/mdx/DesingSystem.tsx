@@ -24,19 +24,19 @@ export function H2(props: HeadingProps) {
 }
 
 export function H3(props: HeadingProps) {
-  return <h3 className="text-base font-semibold text-white" {...props} />;
+  return <h3 className="font-semibold text-purple-950 text-xl" {...props} />;
 }
 
 export function P(props: ParagraphProps) {
-  return <p className="text-base leading-6 text-neutral-200" {...props} />;
+  return <p className="text-base leading-6 text-white" {...props} />;
 }
 
 export function Ul(props: ListUlProps) {
-  return <ul className="list-inside list-disc text-base leading-6 text-neutral-200" {...props} />;
+  return <ul className="list-inside list-disc text-base leading-6 text-white" {...props} />;
 }
 
 export function Ol(props: ListOlProps) {
-  return <ol className="list-inside list-decimal text-base leading-6 text-neutral-200" {...props} />;
+  return <ol className="list-inside list-decimal text-base leading-6 text-white" {...props} />;
 }
 
 export function Li(props: ListItemProps) {

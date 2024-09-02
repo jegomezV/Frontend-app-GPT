@@ -15,7 +15,7 @@ export default function LoginForm() {
 
   useEffect(() => {
     const token = localStorage.getItem('token');
-    console.log('Token retrieved from localStorage on mount:', token); // Debugging line
+    console.log('Token retrieved from localStorage on mount:', token);
 
     if (token !== 'undefined' && token !== null) {
       getUser(token).then(user => {
@@ -24,16 +24,14 @@ export default function LoginForm() {
         }
       });
     }
-  }, [router]); // Incluimos 'router' en las dependencias
+  }, [router]);
 
   /**
    * @function saveToken - Función para guardar el token en el almacenamiento local.
    * @param token - El token a guardar.
    */
   const saveToken = (token: string) => {
-    console.log('Token being saved to localStorage:', token); // Debugging line
     localStorage.setItem('token', token);
-    console.log('Token after saving to localStorage:', localStorage.getItem('token')); // Debugging line
   }
 
   /**
@@ -51,7 +49,6 @@ export default function LoginForm() {
         body: JSON.stringify({ email, password })
       });
       const data = await response.json();
-      console.log('Response data:', data); // Debugging line
 
       if (data.error) {
         setError(data.msg);
@@ -71,13 +68,13 @@ export default function LoginForm() {
   return (
     <form
       onSubmit={handleLogin}
-      className='flex w-full flex-col items-center justify-around gap-4 rounded-xl px-10 py-16'>
+      className='flex w-[40%] border-[1px] drop-shadow-[0_1.5px_10px_rgba(255,255,255,0.1)] shadow-[0_5px_40px_-15px_rgba(255,255,255,0.3)] flex-col items-center justify-around gap-4 rounded-xl px-10 py-16'>
       <h3 className='text-2xl font-light text-white'>Summarizer</h3>
-      <label htmlFor="email" className='flex flex-col'>Email
+      <label htmlFor="email" className='flex flex-col w-[70%]'>Email
         <input type='email' name='email' required className='rounded px-2 py-1 text-black' value={email}
                onChange={e => setEmail(e.target.value)} />
       </label>
-      <label htmlFor="password" className='flex flex-col'>Password
+      <label htmlFor="password" className='flex flex-col w-[70%]'>Password
         <input type='password' required name='password' className='rounded px-2 py-1 text-black' value={password}
                onChange={e => setPassword(e.target.value)} />
       </label>
